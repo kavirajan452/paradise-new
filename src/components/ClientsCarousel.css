@@ -1,0 +1,122 @@
+.clients {
+  background: white;
+  padding: 100px 0;
+}
+
+.clients-header {
+  text-align: center;
+  margin-bottom: 60px;
+  opacity: 0;
+}
+
+.clients-header.animate-in {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.clients-carousel {
+  opacity: 0;
+}
+
+.clients-carousel.animate-in {
+  animation: fadeInUp 0.8s ease-out 0.3s forwards;
+}
+
+.clients-swiper {
+  padding: 40px 0 60px;
+}
+
+.client-card {
+  background: white;
+  border: 2px solid #f0f0f0;
+  border-radius: 12px;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  transition: all 0.3s ease;
+  height: 180px;
+}
+
+.client-card:hover {
+  border-color: var(--primary-orange);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(255, 107, 53, 0.2);
+}
+
+.client-logo {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.client-card:hover .client-logo {
+  background: linear-gradient(135deg, var(--primary-orange) 0%, var(--accent-red) 100%);
+  transform: scale(1.1);
+}
+
+.client-icon {
+  font-size: 2.5rem;
+  transition: all 0.3s ease;
+}
+
+.client-card:hover .client-icon {
+  filter: grayscale(100%) brightness(0) invert(1);
+}
+
+.client-name {
+  font-size: 1rem;
+  color: var(--text-dark);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Swiper Pagination Customization */
+.clients-swiper .swiper-pagination {
+  bottom: 10px;
+}
+
+.clients-swiper .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background: #ddd;
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.clients-swiper .swiper-pagination-bullet-active {
+  background: var(--primary-orange);
+  width: 30px;
+  border-radius: 6px;
+}
+
+@media (max-width: 768px) {
+  .clients {
+    padding: 60px 0;
+  }
+
+  .client-card {
+    padding: 30px 15px;
+    height: 160px;
+  }
+
+  .client-logo {
+    width: 60px;
+    height: 60px;
+  }
+
+  .client-icon {
+    font-size: 2rem;
+  }
+
+  .client-name {
+    font-size: 0.9rem;
+  }
+}

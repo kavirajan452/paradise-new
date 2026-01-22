@@ -1,0 +1,139 @@
+.divisions {
+  background: var(--light-beige);
+  padding: 100px 0;
+}
+
+.divisions-header {
+  text-align: center;
+  margin-bottom: 60px;
+  opacity: 0;
+}
+
+.divisions-header.animate-in {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.divisions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+}
+
+.division-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+  opacity: 0;
+}
+
+.division-card.animate-in {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.division-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.division-image {
+  position: relative;
+  height: 250px;
+  background: linear-gradient(135deg, #ff6b35 0%, #d32f2f 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.division-icon {
+  font-size: 5rem;
+  z-index: 2;
+  filter: grayscale(100%) brightness(0) invert(1);
+  opacity: 0.9;
+}
+
+.division-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 107, 53, 0.8) 0%, rgba(211, 47, 47, 0.8) 100%);
+  transition: opacity 0.3s ease;
+}
+
+.division-card:hover .division-overlay {
+  opacity: 0.9;
+}
+
+.division-content {
+  padding: 30px;
+}
+
+.division-title {
+  font-size: 1.5rem;
+  color: var(--dark-brown);
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.division-description {
+  color: #666;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  font-size: 0.95rem;
+}
+
+.division-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--primary-orange);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.division-link .arrow {
+  transition: transform 0.3s ease;
+}
+
+.division-link:hover {
+  gap: 15px;
+}
+
+.division-link:hover .arrow {
+  transform: translateX(5px);
+}
+
+@media (max-width: 768px) {
+  .divisions {
+    padding: 60px 0;
+  }
+
+  .divisions-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .division-image {
+    height: 200px;
+  }
+
+  .division-icon {
+    font-size: 4rem;
+  }
+
+  .division-content {
+    padding: 20px;
+  }
+}
