@@ -70,6 +70,7 @@ const Stats = () => {
         <div className={`stats-grid ${inView ? 'animate-in' : ''}`}>
           <div className="stat-item">
             <div className="stat-number">
+              {/* Display in K format: 5000 → 5K+ */}
               {Math.floor(counts.employees / 1000)}
               <span className="stat-plus">K+</span>
             </div>

@@ -2,7 +2,7 @@
   position: relative;
   background: 
     linear-gradient(rgba(26, 26, 26, 0.85), rgba(26, 26, 26, 0.85)),
-    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23334155" width="1200" height="800"/><path d="M0 400 Q300 300 600 400 T1200 400" stroke="%23475569" stroke-width="2" fill="none" opacity="0.3"/></svg>');
+    linear-gradient(135deg, #334155 0%, #475569 100%);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;

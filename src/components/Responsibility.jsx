@@ -25,7 +25,7 @@ const Responsibility = () => {
           </h2>
           <p className="responsibility-description">
             We believe in sustainable practices that benefit our communities, our planet, 
-            and future generations. Our commitment goes beyond business—it&apos;s about making a difference.
+            and future generations. Our commitment goes beyond business—it's about making a difference.
           </p>
         </div>
 
