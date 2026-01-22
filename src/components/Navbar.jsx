@@ -15,11 +15,11 @@ function Navbar() {
   }, []);
 
   useEffect(() => {
-    // Prevent body scroll when drawer is open
+    // Prevent body scroll when drawer is open using CSS class
     if (isDrawerOpen) {
-      document.body.style.overflow = 'hidden';
+      document.documentElement.classList.add('drawer-open');
     } else {
-      document.body.style.overflow = '';
+      document.documentElement.classList.remove('drawer-open');
     }
 
     // Focus trap for accessibility
@@ -34,7 +34,7 @@ function Navbar() {
     }
 
     return () => {
-      document.body.style.overflow = '';
+      document.documentElement.classList.remove('drawer-open');
     };
   }, [isDrawerOpen]);
 

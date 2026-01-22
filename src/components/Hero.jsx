@@ -71,7 +71,7 @@ function Hero() {
         {/* Orange Label Bar */}
         <div className="hero__label-bar">
           <p className="hero__label-text">
-            LEADING THE FUTURE OF COPPER, STEEL, AND E‑WASTE RECYCLING WITH PRECISION, PERFORMANCE, AND PURPOSE.
+            LEADING THE FUTURE OF COPPER, STEEL, AND E-WASTE RECYCLING WITH PRECISION, PERFORMANCE, AND PURPOSE.
           </p>
         </div>
       </div>

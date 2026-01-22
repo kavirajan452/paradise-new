@@ -34,6 +34,11 @@ body {
   overflow-x: hidden;
 }
 
+html.drawer-open,
+html.drawer-open body {
+  overflow: hidden;
+}
+
 a {
   color: inherit;
   text-decoration: none;
