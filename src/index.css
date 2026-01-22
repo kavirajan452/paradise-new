@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-[#1a1a1a] text-white antialiased;
+  }
+}
+
+@layer components {
+  /* Swiper customization for division slider */
+  .division-swiper {
+    padding-bottom: 4rem;
+  }
+  
+  .division-swiper .swiper-button-next,
+  .division-swiper .swiper-button-prev {
+    color: #b87333;
+  }
+  
+  .division-swiper .swiper-pagination-bullet {
+    background: #b87333;
+  }
+  
+  .division-swiper .swiper-pagination-bullet-active {
+    background: #b87333;
+  }
+}
