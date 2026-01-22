@@ -114,22 +114,6 @@ const DivisionSection = () => {
           </Swiper>
         </div>
       </div>
-
-      <style jsx>{`
-        .division-swiper {
-          padding-bottom: 4rem;
-        }
-        .division-swiper :global(.swiper-button-next),
-        .division-swiper :global(.swiper-button-prev) {
-          color: #b87333;
-        }
-        .division-swiper :global(.swiper-pagination-bullet) {
-          background: #b87333;
-        }
-        .division-swiper :global(.swiper-pagination-bullet-active) {
-          background: #b87333;
-        }
-      `}</style>
     </section>
   );
 };

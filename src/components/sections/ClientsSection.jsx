@@ -73,21 +73,6 @@ const ClientsSection = () => {
             </a>
           </motion.div>
         </div>
-
-        {/* Mobile Carousel Note */}
-        <style jsx>{`
-          @media (max-width: 768px) {
-            .grid {
-              overflow-x: auto;
-              scroll-snap-type: x mandatory;
-              -webkit-overflow-scrolling: touch;
-            }
-            .grid > div {
-              scroll-snap-align: start;
-              min-width: 150px;
-            }
-          }
-        `}</style>
       </div>
     </section>
   );
