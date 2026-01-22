@@ -7,14 +7,14 @@ const MegaMenu = ({ isOpen, onClose }) => {
 
   useEffect(() => {
     if (isOpen) {
-      document.body.style.overflow = 'hidden';
+      document.body.classList.add('menu-open');
       firstFocusableRef.current?.focus();
     } else {
-      document.body.style.overflow = '';
+      document.body.classList.remove('menu-open');
     }
 
     return () => {
-      document.body.style.overflow = '';
+      document.body.classList.remove('menu-open');
     };
   }, [isOpen]);
 
@@ -32,7 +32,7 @@ const MegaMenu = ({ isOpen, onClose }) => {
   const handleNavClick = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
       onClose();
     }
   };
