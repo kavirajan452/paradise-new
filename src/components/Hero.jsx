@@ -40,7 +40,7 @@ function Hero() {
             playsInline
             poster="/video/hero-poster.jpg"
           >
-            <source src="/video/hero.mp4" type="video/mp4" />
+            <source src="https://dev.opendesignsin.com/Paradise-Recycling/1127/Video/videos/BanVideosss.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         ) : (
