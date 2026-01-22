@@ -1,0 +1,229 @@
+.machines {
+  position: relative;
+  background: linear-gradient(135deg, #3d2516 0%, #2a1810 100%);
+  padding: 100px 0;
+  overflow: hidden;
+}
+
+.machines-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 80% 20%, rgba(255, 107, 53, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 20% 80%, rgba(211, 47, 47, 0.15) 0%, transparent 50%);
+}
+
+.machines-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/></svg>');
+  background-size: 50px 50px;
+  opacity: 0.3;
+}
+
+.machines-content {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  z-index: 10;
+}
+
+.machines-header {
+  text-align: center;
+  margin-bottom: 60px;
+  opacity: 0;
+}
+
+.machines-header.animate-in {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.machines-label {
+  display: block;
+  color: var(--primary-orange);
+  font-size: 0.9rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.machines-title {
+  font-size: 2.5rem;
+  color: white;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  line-height: 1.3;
+  margin-bottom: 20px;
+}
+
+.machines-title .highlight {
+  color: var(--primary-orange);
+}
+
+.machines-description {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.machines-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  margin-bottom: 60px;
+}
+
+.machines-visual {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  opacity: 0;
+}
+
+.machines-visual.animate-in {
+  animation: fadeInUp 0.8s ease-out 0.3s forwards;
+}
+
+.machine-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.4s ease;
+}
+
+.machine-card:hover {
+  transform: scale(1.05);
+  border-color: var(--primary-orange);
+  box-shadow: 0 20px 40px rgba(255, 107, 53, 0.3);
+}
+
+.machine-placeholder {
+  height: 200px;
+  background: linear-gradient(135deg, rgba(255, 107, 53, 0.2) 0%, rgba(211, 47, 47, 0.2) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.machine-icon {
+  font-size: 4rem;
+  filter: grayscale(100%) brightness(0) invert(1);
+  opacity: 0.8;
+}
+
+.machine-info {
+  padding: 20px;
+  text-align: center;
+}
+
+.machine-info h4 {
+  color: white;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.feature-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.4s ease;
+  opacity: 0;
+}
+
+.feature-card.animate-in {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.feature-card:hover {
+  background: rgba(255, 107, 53, 0.1);
+  border-color: var(--primary-orange);
+  transform: translateX(10px);
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  filter: grayscale(100%) brightness(0) invert(1);
+  opacity: 0.9;
+}
+
+.feature-title {
+  color: white;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.feature-description {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.machines-cta {
+  text-align: center;
+  opacity: 0;
+}
+
+.machines-cta.animate-in {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+@media (max-width: 1024px) {
+  .machines-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .machines-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .machines {
+    padding: 60px 0;
+  }
+
+  .machines-content {
+    padding: 0 20px;
+  }
+
+  .machines-title {
+    font-size: 1.6rem;
+  }
+
+  .machine-placeholder {
+    height: 150px;
+  }
+
+  .machine-icon {
+    font-size: 3rem;
+  }
+
+  .feature-card {
+    padding: 20px;
+  }
+}
