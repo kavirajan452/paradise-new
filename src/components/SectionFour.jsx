@@ -90,7 +90,7 @@ function SectionFour() {
             spaceBetween={30}
             slidesPerView={1}
             centeredSlides={true}
-            loop={divisions.length > 3}
+            loop={false}
             loopAdditionalSlides={2}
             autoplay={{
               delay: 5000,
@@ -110,26 +110,22 @@ function SectionFour() {
               320: {
                 slidesPerView: 1,
                 spaceBetween: 20,
-                centeredSlides: true,
-                loop: true
+                centeredSlides: true
               },
               768: {
                 slidesPerView: 2,
                 spaceBetween: 25,
-                centeredSlides: false,
-                loop: false
+                centeredSlides: false
               },
               1024: {
                 slidesPerView: 2,
                 spaceBetween: 30,
-                centeredSlides: true,
-                loop: false
+                centeredSlides: true
               },
               1400: {
                 slidesPerView: 2.5,
                 spaceBetween: 40,
-                centeredSlides: true,
-                loop: false
+                centeredSlides: true
               }
             }}
             className="division-swiper"
