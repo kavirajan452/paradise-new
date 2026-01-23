@@ -30,17 +30,25 @@ function SectionThree() {
     };
   }, []);
 
-  // Parallax effect
+  // Parallax effect with requestAnimationFrame for performance
   useEffect(() => {
+    let ticking = false;
+    
     const handleScroll = () => {
-      if (sectionRef.current) {
-        const rect = sectionRef.current.getBoundingClientRect();
-        const scrollProgress = Math.max(0, Math.min(1, 1 - rect.top / window.innerHeight));
-        setScrollY(scrollProgress);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          if (sectionRef.current) {
+            const rect = sectionRef.current.getBoundingClientRect();
+            const scrollProgress = Math.max(0, Math.min(1, 1 - rect.top / window.innerHeight));
+            setScrollY(scrollProgress);
+          }
+          ticking = false;
+        });
+        ticking = true;
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -84,7 +92,10 @@ function SectionThree() {
             EMPOWERING YOUR SUCCESS WITH OUR
           </p>
           <h2 className="section-three__main-heading">SOLUTION</h2>
-          <button className="section-three__cta-button">
+          <button 
+            className="section-three__cta-button"
+            aria-label="Discover more about our recycling solutions"
+          >
             DISCOVER MORE
           </button>
         </div>
