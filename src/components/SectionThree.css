@@ -1,0 +1,321 @@
+.section-three {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 8rem 2rem;
+}
+
+/* Background with Parallax */
+.section-three__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d1810 50%, #1a1a1a 100%);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+  transition: transform 0.1s ease-out;
+  will-change: transform;
+}
+
+.section-three__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.6) 50%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+  z-index: 1;
+}
+
+/* Decorative Grid Lines */
+.section-three__grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.section-three__grid .grid-line {
+  position: absolute;
+  background: rgba(232, 93, 4, 0.1);
+}
+
+.section-three__grid .grid-line.vertical {
+  top: 0;
+  left: 25%;
+  width: 1px;
+  height: 100%;
+}
+
+.section-three__grid .grid-line.horizontal {
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+}
+
+/* Vertical Centerline */
+.section-three__centerline {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(232, 93, 4, 0.3) 0%,
+    rgba(232, 93, 4, 0.6) 50%,
+    rgba(232, 93, 4, 0.3) 100%
+  );
+  z-index: 2;
+}
+
+/* Container */
+.section-three__container {
+  position: relative;
+  z-index: 3;
+  max-width: 1400px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6rem;
+}
+
+/* Top Stats Row */
+.section-three__top-stats {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.section-three__top-stats.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Center Content */
+.section-three__center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease 0.2s;
+}
+
+.section-three__center.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section-three__subheading {
+  font-family: var(--font-primary);
+  font-size: clamp(0.75rem, 1vw, 0.875rem);
+  font-weight: 500;
+  letter-spacing: 3px;
+  color: rgba(255, 255, 255, 0.8);
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0;
+}
+
+.section-three__main-heading {
+  font-family: var(--font-headline);
+  font-size: clamp(4rem, 10vw, 8rem);
+  font-weight: 700;
+  letter-spacing: 12px;
+  color: var(--white);
+  text-align: center;
+  margin: 0;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.section-three__cta-button {
+  padding: 1rem 3rem;
+  font-family: var(--font-primary);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: var(--white);
+  text-transform: uppercase;
+  background: transparent;
+  border: 2px solid var(--orange);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.section-three__cta-button:hover {
+  background: var(--orange);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(232, 93, 4, 0.4);
+}
+
+.section-three__cta-button:focus-visible {
+  outline: 2px solid var(--orange);
+  outline-offset: 4px;
+}
+
+.section-three__cta-button:active {
+  transform: translateY(0);
+}
+
+/* Bottom Stats Row */
+.section-three__bottom-stats {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease 0.4s;
+}
+
+.section-three__bottom-stats.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stat Items */
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.stat-item.left {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.stat-item.right {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.stat-number {
+  font-family: var(--font-headline);
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 700;
+  letter-spacing: 4px;
+  color: rgba(255, 255, 255, 0.2);
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.stat-caption {
+  font-family: var(--font-primary);
+  font-size: clamp(0.625rem, 0.9vw, 0.75rem);
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  line-height: 1.4;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .section-three {
+    min-height: 90vh;
+    padding: 6rem 2rem;
+  }
+
+  .section-three__container {
+    gap: 4rem;
+  }
+
+  .section-three__main-heading {
+    letter-spacing: 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-three {
+    min-height: auto;
+    padding: 4rem 1.5rem;
+  }
+
+  .section-three__container {
+    gap: 3rem;
+  }
+
+  /* Stack stats vertically on mobile */
+  .section-three__top-stats,
+  .section-three__bottom-stats {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .stat-item.left,
+  .stat-item.right {
+    align-items: center;
+    text-align: center;
+  }
+
+  .section-three__subheading {
+    letter-spacing: 2px;
+  }
+
+  .section-three__main-heading {
+    letter-spacing: 4px;
+  }
+
+  .section-three__cta-button {
+    padding: 0.875rem 2.5rem;
+    font-size: 0.75rem;
+  }
+
+  /* Hide some grid lines on mobile */
+  .section-three__grid .grid-line.vertical {
+    display: none;
+  }
+
+  /* Make centerline more subtle on mobile */
+  .section-three__centerline {
+    opacity: 0.5;
+  }
+
+  /* Disable parallax on mobile for performance */
+  .section-three__background {
+    transform: none !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-three {
+    padding: 3rem 1rem;
+  }
+
+  .section-three__container {
+    gap: 2rem;
+  }
+
+  .section-three__cta-button {
+    padding: 0.75rem 2rem;
+  }
+}
